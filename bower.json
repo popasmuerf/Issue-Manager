@@ -1,0 +1,22 @@
+{
+  "name": "issue-manager",
+  "homepage": "https://github.com/popasmuerf/Issue-Manager",
+  "authors": [
+    "mikeyb <MichaelBrown172@Gmail.com>"
+  ],
+  "description": "Learning Spring Boot - Issue Manager",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/resources/public",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-mobile": "^1.4.5"
+  }
+}
