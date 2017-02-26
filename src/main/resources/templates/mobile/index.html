@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="jquery-mobile/css/themes/default/jquery.mobile.css" />
+    <script src="jquery/jquery.js"></script>
+    <script src="jquery-mobile/js/jquery.mobile.js"></script>
+</head>
 <body>
-<p>Open GitHub Issues</p>
-<table>
-    <thead>
-    <tr>
-        <td>Repo</td>
-        <td>Issue</td>
-        <td>Title</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="issue : ${issues}">
-        <td th:text="${issue.repo}"></td>
-        <td>
-            <a th:href="${issue.gitHubIssue.url}" target="_blank">
-                <span th:text="${issue.gitHubIssue.number}"/>
-            </a>
-        </td>
-        <td th:text="${issue.gitHubIssue.title}"></td>
-    </tr>
-    </tbody>
-</table>
+<div data-role="page" id="home">
+    <div data-role="header" data-posistion="fixed">
+        <a href="/" data-icon="home" data-iconpos="notext"></a>
+        <h1>Issue Manager Mobile</h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview">
+            <li th:each="issue:${issues}">
+                <a th:href="${issue.githubIssue.htmlUrl}" target="_blank" th:text="${issue.githubIssue.title}"></a>
+            </li>
+        </ul>
 
-
+    </div>
+</div>
 </body>
-</html>>
+</html>
