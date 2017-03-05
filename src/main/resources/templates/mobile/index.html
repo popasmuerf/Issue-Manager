@@ -7,22 +7,18 @@
     <script src="jquery-mobile/js/jquery.mobile.js"></script>
 </head>
 <body>
-    <div data-role="page" id="home">
+<div data-role="page" id="home">
         <div data-role="header" data-posistion="fixed">
             <a href="/" data-icon="home" data-iconpos="notext"></a>
             <h1>Issue Manager Mobile</h1>
         </div>
-
-
         <div data-role="content">
-            <li data-role="listview">
-                <li th:each="issue : ${issues}"></li>
+            <ul data-role="listview">
+                <li th:each="issue : ${issues}">
                     <a th:href="${issue.githubIssue.htmUrl}" target="_blank" th:text="${issue.githubIssue.title}"></a>
                 </li>
             </ul>
         </div>
-    </div>
-
 </div>
 </body>
 </html>
